@@ -1,0 +1,2 @@
+document.querySelector('[name="delay"]'),document.querySelector('[name="step"]'),document.querySelector('[name="amount"]');function e(o,t){if(Math.random()>.3)for(let o=0;o<3;o+=1)new Promise((n=>{e(),setTimeout((()=>{n(o)}),t)}))}document.querySelector("button").addEventListener("click",e),e(0,1500).then((({position:e,delay:o})=>{console.log(`✅ Fulfilled promise ${e} in ${o}ms`)})).catch((({position:e,delay:o})=>{console.log(`❌ Rejected promise ${e} in ${o}ms`)}));
+//# sourceMappingURL=03-promises.38044a55.js.map
