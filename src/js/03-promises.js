@@ -1,24 +1,23 @@
-const firstDelayRef = document.querySelector('[name="delay"]');
-const delayStepRef = document.querySelector('[name="step"]');
-const amountRef = document.querySelector('[name="amount"]');
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 const createPromisesButton = document.querySelector('button');
 
 createPromisesButton.addEventListener('click', createPromise);
 
 function createPromise(position, delay) {
-  const shouldResolve = Math.random() > 0.3;
-  if (shouldResolve) {
-    for (let i = 0; i < 3; i += 1) {
-      new Promise(resolve => {
-        createPromise();
-        setTimeout(() => {
-          resolve(i);
-        }, delay);
-      });
-      //   .then(value => console.log(value));
-      // delay += step;
-    }
-  }
+  return new Promise((resolve, reject) => {
+    const shouldResolve = Math.random() > 0.3;
+    setTimeout(() => {
+      if (shouldResolve) {
+        for (let i = 0; i < 3; i += 1) {
+          i = position;
+          resolve(position => console.log(position));
+        }
+      } else {
+        reject('error!');
+      }
+    }, delay);
+  });
 }
 
 createPromise(2, 1500)
