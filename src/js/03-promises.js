@@ -1,8 +1,8 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-const createPromisesButton = document.querySelector('button');
+const createPromisesForm = document.querySelector('.form');
 
-createPromisesButton.addEventListener('click', createPromise);
+createPromisesForm.addEventListener('submit', createPromise);
 
 function createPromise(position, delay) {
   return new Promise((resolve, reject) => {
